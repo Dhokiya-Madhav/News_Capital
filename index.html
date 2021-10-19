@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Link for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Link for Web document icon -->
+  <link rel="icon" href="Logo.png">
+  <title>NEWS CAPITAL</title>
+</head>
+
+<body>
+  <!-- Navigation Bar Start -->
+  <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="Logo.PNG" alt="" width="auto" height="40"> <b class="text-white">NEWS </b><b
+        class="text-warning">CAPITAL</b>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li>
+          <div class="input-group my-lg-0 my-sm-2 my-2">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-warning" onclick="datalistFunction()" type="button">Search For </button>
+            </div>
+            <input class="form-control rounded-right" list="datalistOptions" id="exampleDataList"
+              placeholder="Topic or Category">
+            <datalist id="datalistOptions">
+              <option value="BreakingNews">
+              <option value="World">
+                <option value="Nation">
+              <option value="Business">
+              <option value="Entertainment">
+              <option value="Health">
+              <option value="Science">
+              <option value="Sports">
+              <option value="Technology">
+            </datalist>
+          </div>
+        </li>
+      </ul>
+
+      <div class="input-group col-lg-7 col-xl-5">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-warning input-group-prepend" data-toggle="modal"
+          data-target="#exampleModal">
+          Language
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true" >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title mx-4" id="exampleModalLabel">Language Selection</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="mx-4" id="display_lang">Select Language of Interest:</h5>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="changelanguage()" class="btn btn-success" data-dismiss="modal">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option value="" selected disabled>Region Selection</option>
+        </select>
+        <div class="input-group-append">
+          <button class="btn btn-warning" onclick="countrySelected()" type="button">Apply
+            Filter</button>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Navigation Bar End -->
+
+  <!-- Headline Section Start -->
+  <div class=" pt-3 container-fluid">
+    
+
+    <div id="breakingnews" class="alert alert-primary text-dark">
+      <h5><b> Breaking News <span class="badge badge-primary">NEW</span> </b> </h5>
+    </div>
+    <div id="world" class="alert alert-success text-dark d-none">
+      <h5><b> World - Top Headlines <span class="badge badge-success">NEW</span> </b> </h5>
+    </div>
+    <div id="nation" class="alert alert-info text-dark d-none">
+      <h5><b> Nation - Top Headlines <span class="badge badge-info">NEW</span> </b> </h5>
+    </div>
+    <div id="business" class="alert alert-warning text-dark d-none">
+      <h5><b> Business - Top Headlines <span class="badge badge-warning">NEW</span> </b> </h5>
+    </div>
+    <div id="technology" class="alert alert-primary text-dark d-none">
+      <h5><b> Technology - Top Headlines <span class="badge badge-primary">NEW</span> </b> </h5>
+    </div>
+    <div id="entertainment" class="alert alert-success text-dark d-none">
+      <h5><b> Entertainment - Top Headlines <span class="badge badge-success">NEW</span> </b> </h5>
+    </div>
+    <div id="science" class="alert alert-info text-dark d-none">
+      <h5><b> Science - Top Headlines <span class="badge badge-info">NEW</span> </b> </h5>
+    </div>
+    <div id="sports" class="alert alert-warning text-dark d-none">
+      <h5><b> Sports - Top Headlines <span class="badge badge-warning">NEW</span> </b> </h5>
+    </div>
+    <div id="health" class="alert alert-primary text-dark d-none">
+      <h5><b> Health - Top Headlines <span class="badge badge-primary">NEW</span> </b> </h5>
+    </div>
+    <div id="custom" class="alert alert-success text-dark d-none">
+      <h5><b id="custom_topic"> </b> </h5>
+    </div>
+    <div id="newsDisplay">
+    </div>
+  </div>
+  <!-- Headline Section end -->
+
+  <!-- Bottom Navigation Bar -->
+  <nav id="footer" class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Capture3.PNG" alt="" width="auto" height="40"> <b>NEWS </b><b class="text-warning">CAPITAL</b>
+      </a>
+      <p class="text-warning">Copyright @2021 All Right reserved by NEWS CAPITAL</p>
+      <div class="text-white">
+        <h2>Follow us</h32>
+          <div class="h4">
+            <a href="#"><i class="fa fa-facebook fb text-primary"></i></a>
+            <a href="#"><i class="fa fa-instagram insta text-danger"></i></a>
+            <a href="#"><i class="fa fa-twitter twt text-primary"></i></a>
+            <a href="#"><i class="fa fa-snapchat snpct text-warning"></i></a>
+          </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Bottom Navigation Bar End -->
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
